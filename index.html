@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Golden State Epoxy Floors — California's premier metallic epoxy flooring specialists. Luxury metallic epoxy floor coatings for residential garages, commercial spaces, and restaurants across the Bay Area and all of California.">
+    <meta name="keywords" content="metallic epoxy floor California, epoxy garage floor Bay Area, commercial epoxy flooring, decorative concrete coating, epoxy floor contractor near me, residential epoxy floors, metallic epoxy flooring cost, epoxy floor installers California">
+    <title>Golden State Epoxy Floors — California's Metallic Flooring Artisans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           CSS RESET & BASE
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --obsidian: #0A0A0A;
+            --obsidian-light: #111111;
+            --obsidian-lighter: #1A1A1A;
+            --gold: #C9A84C;
+            --gold-dark: #A8893D;
+            --gold-light: #DFC06A;
+            --platinum: #D4D4D4;
+            --platinum-dim: #999999;
+            --white: #FFFFFF;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--obsidian);
+            color: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ============================================
+           NOISE / GRAIN OVERLAY
+           ============================================ */
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.25rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 0.75rem 3rem;
+            box-shadow: 0 1px 0 rgba(201, 168, 76, 0.15);
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 0.02em;
+        }
+
+        .nav-logo span {
+            color: var(--white);
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--platinum);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            font-size: 0.8rem !important;
+            padding: 0.6rem 1.4rem;
+            border: 1px solid var(--gold);
+            color: var(--gold) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--obsidian) !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ============================================
+           BUTTONS
+           ============================================ */
+        .btn {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 1rem 2.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--obsidian);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(201, 168, 76, 0.3);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--platinum);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-dark {
+            background: var(--obsidian);
+            color: var(--white);
+            border: 2px solid var(--obsidian);
+        }
+
+        .btn-dark:hover {
+            background: var(--obsidian-lighter);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ============================================
+           SHIMMER LINE ANIMATION
+           ============================================ */
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .shimmer-line {
+            width: 200px;
+            height: 2px;
+            margin: 1.5rem auto 0;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                var(--gold) 25%,
+                var(--gold-light) 50%,
+                var(--gold) 75%,
+                transparent 100%
+            );
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .shimmer-line-wide {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                var(--gold) 20%,
+                var(--gold-light) 50%,
+                var(--gold) 80%,
+                transparent 100%
+            );
+            background-size: 200% 100%;
+            animation: shimmer 4s ease-in-out infinite;
+        }
+
+        /* ============================================
+           SECTION UTILITIES
+           ============================================ */
+        .section {
+            padding: 7rem 3rem;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.05rem;
+            color: var(--platinum-dim);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Fade in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background-image: url('https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=1800');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            will-change: transform;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                180deg,
+                rgba(10, 10, 10, 0.7) 0%,
+                rgba(10, 10, 10, 0.5) 40%,
+                rgba(10, 10, 10, 0.8) 100%
+            );
+        }
+
+        .hero-grain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 2rem;
+            max-width: 900px;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-display);
+            font-size: 4.5rem;
+            font-weight: 600;
+            font-style: italic;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-content .subtitle {
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: var(--platinum);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================
+           WHY GOLDEN STATE SECTION
+           ============================================ */
+        .why-section {
+            background: var(--obsidian-light);
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .pillar {
+            text-align: center;
+            padding: 2.5rem 2rem;
+        }
+
+        .pillar-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+
+        .pillar-icon svg {
+            width: 52px;
+            height: 52px;
+            margin: 0 auto;
+        }
+
+        .pillar h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .pillar p {
+            font-size: 0.95rem;
+            color: var(--platinum-dim);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           THE PROCESS SECTION
+           ============================================ */
+        .process-section {
+            background: var(--obsidian);
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .process-step.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .step-number {
+            font-family: var(--font-display);
+            font-size: 8rem;
+            font-weight: 700;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--gold);
+            line-height: 1;
+            flex-shrink: 0;
+            min-width: 160px;
+            text-align: center;
+        }
+
+        .step-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .step-content p {
+            font-size: 1rem;
+            color: var(--platinum-dim);
+            line-height: 1.8;
+            max-width: 500px;
+        }
+
+        /* ============================================
+           GALLERY SECTION
+           ============================================ */
+        .gallery-section {
+            background: var(--obsidian-light);
+            padding-bottom: 5rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item:nth-child(1) {
+            grid-row: span 2;
+            aspect-ratio: auto;
+        }
+
+        .gallery-item:nth-child(4) {
+            grid-column: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, transparent 50%, rgba(10, 10, 10, 0.7) 100%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item::after {
+            content: attr(data-caption);
+            position: absolute;
+            bottom: 1.25rem;
+            left: 1.25rem;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 0.05em;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-gold-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(201, 168, 76, 0.1);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .gallery-item:hover .gallery-gold-overlay {
+            opacity: 1;
+        }
+
+        /* ============================================
+           SERVICES SECTION
+           ============================================ */
+        .services-section {
+            background: var(--obsidian);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--obsidian-lighter);
+            border-top: 3px solid var(--gold);
+            padding: 2.5rem 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--platinum-dim);
+            line-height: 1.7;
+        }
+
+        .service-icon {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* ============================================
+           TESTIMONIALS SECTION
+           ============================================ */
+        .testimonials-section {
+            background: var(--obsidian-light);
+        }
+
+        .testimonial-wrapper {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            min-height: 280px;
+        }
+
+        .testimonial-quote-mark {
+            font-family: var(--font-display);
+            font-size: 10rem;
+            color: var(--gold);
+            opacity: 0.15;
+            line-height: 0.5;
+            position: absolute;
+            top: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .testimonial-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+            pointer-events: none;
+        }
+
+        .testimonial-slide.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-family: var(--font-display);
+            font-size: 1.65rem;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--white);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-author {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 0.08em;
+        }
+
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 2.5rem;
+        }
+
+        .testimonial-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--platinum-dim);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .testimonial-dot.active {
+            background: var(--gold);
+            transform: scale(1.3);
+        }
+
+        /* ============================================
+           CTA BANNER SECTION
+           ============================================ */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 50%, var(--gold) 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 6s ease infinite;
+            padding: 5rem 3rem;
+            text-align: center;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .cta-banner h2 {
+            font-family: var(--font-display);
+            font-size: 3.25rem;
+            font-weight: 700;
+            color: var(--obsidian);
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            font-size: 1.1rem;
+            color: rgba(10, 10, 10, 0.8);
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--obsidian);
+            border-top: 1px solid rgba(201, 168, 76, 0.15);
+            padding: 4rem 3rem 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--white);
+            font-weight: 400;
+        }
+
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: var(--platinum-dim);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .footer-nav h4 {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-nav a {
+            font-size: 0.9rem;
+            color: var(--platinum-dim);
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--gold);
+        }
+
+        .footer-contact h4 {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-contact p {
+            font-size: 0.9rem;
+            color: var(--platinum-dim);
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .footer-contact a {
+            color: var(--platinum);
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ============================================
+           MOBILE NAV OVERLAY
+           ============================================ */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            transition: right 0.4s ease;
+        }
+
+        .mobile-nav.open {
+            right: 0;
+        }
+
+        .mobile-nav a {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav a:hover {
+            color: var(--gold);
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pillars-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+
+            .process-step {
+                gap: 2.5rem;
+            }
+
+            .step-number {
+                font-size: 6rem;
+                min-width: 120px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem 1.5rem;
+            }
+
+            .navbar.scrolled {
+                padding: 0.75rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .section {
+                padding: 5rem 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.25rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.75rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 0.9rem;
+                letter-spacing: 0.1em;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .process-step,
+            .process-step.reverse {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .step-number {
+                font-size: 5rem;
+            }
+
+            .step-content p {
+                max-width: 100%;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-item:nth-child(1) {
+                grid-row: span 1;
+            }
+
+            .gallery-item:nth-child(4) {
+                grid-column: span 1;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-text {
+                font-size: 1.25rem;
+            }
+
+            .cta-banner h2 {
+                font-size: 2.25rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.15rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.85rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================
+           QUOTE MODAL
+           ============================================ */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal {
+            background: var(--obsidian-light);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-top: 3px solid var(--gold);
+            max-width: 560px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 3rem 2.5rem;
+            position: relative;
+            transform: translateY(30px) scale(0.97);
+            transition: transform 0.4s ease;
+        }
+
+        .modal-overlay.open .modal {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--platinum-dim);
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .modal h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal .modal-subtitle {
+            font-size: 0.9rem;
+            color: var(--platinum-dim);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background: var(--obsidian);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.25);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+
+        .form-group select option {
+            background: var(--obsidian);
+            color: var(--white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-required {
+            color: var(--gold);
+        }
+
+        .btn-submit {
+            width: 100%;
+            margin-top: 0.5rem;
+            padding: 1.1rem 2rem;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-submit .spinner {
+            display: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(10, 10, 10, 0.3);
+            border-top: 2px solid var(--obsidian);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-right: 0.5rem;
+        }
+
+        .btn-submit.loading .spinner {
+            display: inline-block;
+        }
+
+        .btn-submit.loading .btn-text {
+            opacity: 0.7;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .form-success.show {
+            display: block;
+        }
+
+        .form-success .success-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-success h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .form-success p {
+            color: var(--platinum-dim);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .form-error {
+            display: none;
+            background: rgba(220, 50, 50, 0.1);
+            border: 1px solid rgba(220, 50, 50, 0.3);
+            color: #f87171;
+            padding: 0.75rem 1rem;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-error.show {
+            display: block;
+        }
+
+        .modal-phone-fallback {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .modal-phone-fallback p {
+            font-size: 0.8rem;
+            color: var(--platinum-dim);
+        }
+
+        .modal-phone-fallback a {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .modal {
+                padding: 2rem 1.5rem;
+            }
+
+            .modal h2 {
+                font-size: 1.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#hero" class="nav-logo">Golden State <span>Epoxy Floors</span></a>
+        <ul class="nav-links">
+            <li><a href="#why">Why Us</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#why" onclick="closeMobileNav()">Why Us</a>
+        <a href="#process" onclick="closeMobileNav()">Process</a>
+        <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
+        <a href="#services" onclick="closeMobileNav()">Services</a>
+        <a href="#testimonials" onclick="closeMobileNav()">Reviews</a>
+        <a href="#contact" onclick="closeMobileNav()">Get a Quote</a>
+    </div>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-grain"></div>
+        <div class="hero-content">
+            <h1>"Where Floors Become Works of Art"</h1>
+            <div class="shimmer-line"></div>
+            <p class="subtitle">California's Premier Metallic Epoxy Flooring Specialists</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-gold">Get a Free Quote</a>
+                <a href="#gallery" class="btn btn-ghost">See Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shimmer Divider -->
+    <div class="shimmer-line-wide"></div>
+
+    <!-- ============================================
+         WHY GOLDEN STATE SECTION
+         ============================================ -->
+    <section class="section why-section" id="why">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Built for California. Built to Last.</h2>
+                <p>When you choose Golden State Epoxy Floors, you're choosing a team that has mastered the art of metallic epoxy floor coating in California — from the Bay Area to Sacramento and beyond.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar fade-in">
+                    <span class="pillar-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 6L38 22H54L41 32L45 48L32 38L19 48L23 32L10 22H26L32 6Z" stroke="#C9A84C" stroke-width="2.5" fill="none"/>
+                            <circle cx="32" cy="32" r="28" stroke="#C9A84C" stroke-width="1.5" opacity="0.3"/>
+                        </svg>
+                    </span>
+                    <h3>10+ Years of Expertise</h3>
+                    <p>Hundreds of residential and commercial epoxy floors installed across California. From garage epoxy flooring in the Bay Area to large-scale commercial projects — we've done it all.</p>
+                </div>
+                <div class="pillar fade-in" style="transition-delay: 0.15s;">
+                    <span class="pillar-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="24" r="10" stroke="#C9A84C" stroke-width="2.5" fill="none"/>
+                            <path d="M22 38C22 38 24 48 32 48C40 48 42 38 42 38" stroke="#C9A84C" stroke-width="2.5" fill="none"/>
+                            <line x1="32" y1="48" x2="32" y2="58" stroke="#C9A84C" stroke-width="2.5"/>
+                            <line x1="26" y1="58" x2="38" y2="58" stroke="#C9A84C" stroke-width="2.5"/>
+                            <circle cx="32" cy="32" r="28" stroke="#C9A84C" stroke-width="1.5" opacity="0.3"/>
+                        </svg>
+                    </span>
+                    <h3>Industrial-Grade Materials</h3>
+                    <p>We use only the highest-rated epoxy resins and decorative concrete coatings for a finish that's as durable as it is stunning. Our materials are built for California's demanding climate.</p>
+                </div>
+                <div class="pillar fade-in" style="transition-delay: 0.3s;">
+                    <span class="pillar-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 8L34 24L42 12L36 26L50 22L38 30L52 36L36 34L42 50L34 38L32 54L30 38L22 50L28 34L12 36L26 30L14 22L28 26L22 12L30 24L32 8Z" stroke="#C9A84C" stroke-width="2" fill="none"/>
+                            <circle cx="32" cy="32" r="28" stroke="#C9A84C" stroke-width="1.5" opacity="0.3"/>
+                        </svg>
+                    </span>
+                    <h3>Metallic Artistry</h3>
+                    <p>Every floor is a one-of-a-kind creation — no two metallic epoxy floors are ever identical. Our artisans hand-manipulate metallic pigments to craft floors that are truly works of art.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shimmer Divider -->
+    <div class="shimmer-line-wide"></div>
+
+    <!-- ============================================
+         THE PROCESS SECTION
+         ============================================ -->
+    <section class="section process-section" id="process">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>From Concrete to Stunning — Here's How It Works</h2>
+                <p>Our proven four-step process ensures every metallic epoxy floor we install is flawless, durable, and breathtaking.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step fade-in-left">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Free Consultation</h3>
+                        <p>We visit your space, assess the floor, and map out your vision. No pressure, no jargon — just honest conversation about what's possible. As a trusted epoxy floor contractor near you, we make the process simple from day one.</p>
+                    </div>
+                </div>
+                <div class="process-step reverse fade-in-right">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Surface Preparation</h3>
+                        <p>We grind and diamond-polish your concrete to perfection. Great floors start with great prep — this is the foundation that separates amateur work from a professional metallic epoxy flooring installation.</p>
+                    </div>
+                </div>
+                <div class="process-step fade-in-left">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Epoxy Application</h3>
+                        <p>Our team pours, spreads, and manipulates the metallic pigments by hand — this is where the magic happens. Each residential or commercial epoxy floor becomes a unique masterpiece.</p>
+                    </div>
+                </div>
+                <div class="process-step reverse fade-in-right">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Seal &amp; Cure</h3>
+                        <p>A crystal-clear topcoat locks in the design and protects your floor for years to come. The result? A mirror-like finish that makes people ask about your metallic epoxy flooring cost — because it looks like a million bucks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shimmer Divider -->
+    <div class="shimmer-line-wide"></div>
+
+    <!-- ============================================
+         GALLERY SECTION
+         ============================================ -->
+    <section class="section gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>See the Difference</h2>
+                <p>Every metallic epoxy floor we pour is a unique, hand-crafted work of art. Browse some of our recent installations across California.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in" data-caption="Metallic Epoxy — Livermore, CA">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800" alt="Metallic epoxy floor installation in Livermore, California — luxury residential garage floor coating" loading="lazy">
+                    <div class="gallery-gold-overlay"></div>
+                </div>
+                <div class="gallery-item fade-in" style="transition-delay: 0.1s;" data-caption="Metallic Epoxy — San Jose, CA">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800" alt="Commercial epoxy flooring in San Jose — industrial-grade metallic floor coating" loading="lazy">
+                    <div class="gallery-gold-overlay"></div>
+                </div>
+                <div class="gallery-item fade-in" style="transition-delay: 0.2s;" data-caption="Metallic Epoxy — Oakland, CA">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Decorative concrete coating in Oakland, CA — glossy resin floor finish" loading="lazy">
+                    <div class="gallery-gold-overlay"></div>
+                </div>
+                <div class="gallery-item fade-in" style="transition-delay: 0.15s;" data-caption="Metallic Epoxy — Walnut Creek, CA">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800" alt="Residential epoxy floor in Walnut Creek — metallic epoxy floor California" loading="lazy">
+                    <div class="gallery-gold-overlay"></div>
+                </div>
+                <div class="gallery-item fade-in" style="transition-delay: 0.25s;" data-caption="Metallic Epoxy — Sacramento, CA">
+                    <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800" alt="Epoxy garage floor Bay Area — premium metallic flooring installation" loading="lazy">
+                    <div class="gallery-gold-overlay"></div>
+                </div>
+                <div class="gallery-item fade-in" style="transition-delay: 0.3s;" data-caption="Metallic Epoxy — Pleasanton, CA">
+                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800" alt="Luxury metallic epoxy flooring in Pleasanton — epoxy floor installers California" loading="lazy">
+                    <div class="gallery-gold-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shimmer Divider -->
+    <div class="shimmer-line-wide"></div>
+
+    <!-- ============================================
+         SERVICES SECTION
+         ============================================ -->
+    <section class="section services-section" id="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>What We Do</h2>
+                <p>From residential garage floors to FDA-compliant restaurant installations, Golden State Epoxy Floors delivers premium metallic epoxy flooring for every space.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <span class="service-icon">🏠</span>
+                    <h3>Residential Garage Floors</h3>
+                    <p>Transform your garage into a showroom with our premium epoxy garage floor coatings. Durable, stunning, and designed to turn heads — the best residential epoxy floors in California.</p>
+                </div>
+                <div class="service-card fade-in" style="transition-delay: 0.1s;">
+                    <span class="service-icon">🏡</span>
+                    <h3>Basement &amp; Living Spaces</h3>
+                    <p>Seamless, waterproof, beautiful. Our metallic epoxy floor coatings transform basements and living areas into luxurious spaces that are easy to clean and impossible to ignore.</p>
+                </div>
+                <div class="service-card fade-in" style="transition-delay: 0.2s;">
+                    <span class="service-icon">🏢</span>
+                    <h3>Commercial &amp; Retail</h3>
+                    <p>High-traffic floors that make a statement. Our commercial epoxy flooring solutions are built to withstand the demands of retail, offices, and industrial environments across the Bay Area.</p>
+                </div>
+                <div class="service-card fade-in" style="transition-delay: 0.3s;">
+                    <span class="service-icon">🍽️</span>
+                    <h3>Restaurant &amp; Hospitality</h3>
+                    <p>FDA-compliant, slip-resistant, stunning. Our decorative concrete coatings are the top choice for restaurants and hospitality venues throughout California.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shimmer Divider -->
+    <div class="shimmer-line-wide"></div>
+
+    <!-- ============================================
+         TESTIMONIALS SECTION
+         ============================================ -->
+    <section class="section testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>What Our Clients Say</h2>
+            </div>
+            <div class="testimonial-wrapper">
+                <div class="testimonial-quote-mark">&ldquo;</div>
+                <div class="testimonial-slide active" data-index="0">
+                    <p class="testimonial-text">Golden State transformed our garage floor into something that looks like it belongs in a luxury car dealership. Absolutely stunning.</p>
+                    <p class="testimonial-author">— Mike T., San Jose CA</p>
+                </div>
+                <div class="testimonial-slide" data-index="1">
+                    <p class="testimonial-text">Professional, fast, and the result is jaw-dropping. We get compliments every single day.</p>
+                    <p class="testimonial-author">— Sandra L., Walnut Creek CA</p>
+                </div>
+                <div class="testimonial-slide" data-index="2">
+                    <p class="testimonial-text">Best investment we made in our restaurant remodel. The floor alone brings people in.</p>
+                    <p class="testimonial-author">— Carlos R., Oakland CA</p>
+                </div>
+                <div class="testimonial-dots">
+                    <button class="testimonial-dot active" data-index="0" aria-label="Testimonial 1"></button>
+                    <button class="testimonial-dot" data-index="1" aria-label="Testimonial 2"></button>
+                    <button class="testimonial-dot" data-index="2" aria-label="Testimonial 3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA BANNER SECTION
+         ============================================ -->
+    <section class="cta-banner" id="contact">
+        <div class="container">
+            <h2>Ready to Elevate Your Space?</h2>
+            <p>Get your free, no-obligation quote today. Whether you need an epoxy garage floor in the Bay Area or a full commercial installation, we serve the greater Bay Area, Sacramento, and all of California.</p>
+            <a href="tel:9255182985" class="btn btn-dark">Request Your Free Quote</a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">Golden State <span>Epoxy Floors</span></div>
+                <p class="footer-tagline">California's Metallic Flooring Artisans — transforming concrete into art since 2014.</p>
+            </div>
+            <div class="footer-nav">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#why">Why Us</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Get a Quote</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>📞 <a href="tel:9255182985">(925) 518-2985</a></p>
+                <p>📧 <a href="mailto:Jag.concrete22@gmail.com">Jag.concrete22@gmail.com</a></p>
+                <p style="margin-top: 1rem;">📍 Serving the Bay Area, Sacramento,<br>and all of California</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Golden State Epoxy Floors. All Rights Reserved. | Metallic Epoxy Floor Contractor — Serving California with Pride.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         QUOTE MODAL
+         ============================================ -->
+    <div class="modal-overlay" id="quoteModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+
+            <!-- The Form -->
+            <div id="quoteFormContainer">
+                <h2>Get Your Free Quote</h2>
+                <p class="modal-subtitle">Tell us about your project and we'll get back to you within 24 hours with a personalized estimate.</p>
+
+                <div class="form-error" id="formError"></div>
+
+                <form id="quoteForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="qName">Full Name <span class="form-required">*</span></label>
+                            <input type="text" id="qName" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="qPhone">Phone <span class="form-required">*</span></label>
+                            <input type="tel" id="qPhone" name="phone" placeholder="(925) 555-1234" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="qEmail">Email</label>
+                        <input type="email" id="qEmail" name="email" placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="qAddress">Project Address / City</label>
+                        <input type="text" id="qAddress" name="address" placeholder="123 Main St, Livermore, CA">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="qProject">Project Type</label>
+                            <select id="qProject" name="projectType">
+                                <option value="">Select a project type</option>
+                                <option value="Residential Garage">Residential Garage</option>
+                                <option value="Basement / Living Space">Basement / Living Space</option>
+                                <option value="Commercial / Retail">Commercial / Retail</option>
+                                <option value="Restaurant / Hospitality">Restaurant / Hospitality</option>
+                                <option value="Patio / Outdoor">Patio / Outdoor</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="qSqft">Approx. Square Footage</label>
+                            <input type="text" id="qSqft" name="squareFootage" placeholder="e.g. 500">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="qMessage">Tell Us More</label>
+                        <textarea id="qMessage" name="message" placeholder="Any details about your project — timeline, color preferences, special requirements..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-gold btn-submit" id="submitBtn">
+                        <span class="spinner"></span>
+                        <span class="btn-text">Request My Free Quote</span>
+                    </button>
+                </form>
+
+                <div class="modal-phone-fallback">
+                    <p>Prefer to talk? Call us at <a href="tel:9255182985">(925) 518-2985</a></p>
+                </div>
+            </div>
+
+            <!-- Success Message (hidden by default) -->
+            <div class="form-success" id="formSuccess">
+                <div class="success-icon">✨</div>
+                <h3>Quote Request Received!</h3>
+                <p>Thank you! Joseph from Golden State Epoxy Floors will personally reach out within 24 hours to discuss your project.</p>
+                <div class="modal-phone-fallback" style="margin-top: 2rem;">
+                    <p>Can't wait? Call us now at <a href="tel:9255182985">(925) 518-2985</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        // ---- CONFIG ----
+        const CRM_API_URL = 'https://b2b-leadgen-kappa.vercel.app/api/quote';
+
+        // ---- Navbar scroll effect ----
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // ---- Hamburger menu ----
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('open');
+            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+        });
+
+        function closeMobileNav() {
+            hamburger.classList.remove('active');
+            mobileNav.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // ---- Parallax hero ----
+        const heroBg = document.getElementById('heroBg');
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            if (scrolled < window.innerHeight) {
+                heroBg.style.transform = `translateY(${scrolled * 0.4}px)`;
+            }
+        });
+
+        // ---- Scroll-triggered animations (Intersection Observer) ----
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ---- Testimonials auto-cycle ----
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        let currentSlide = 0;
+        let testimonialInterval;
+
+        function goToSlide(index) {
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            const next = (currentSlide + 1) % slides.length;
+            goToSlide(next);
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                clearInterval(testimonialInterval);
+                goToSlide(parseInt(dot.dataset.index));
+                testimonialInterval = setInterval(nextSlide, 5000);
+            });
+        });
+
+        testimonialInterval = setInterval(nextSlide, 5000);
+
+        // ---- QUOTE MODAL ----
+        const quoteModal = document.getElementById('quoteModal');
+        const modalClose = document.getElementById('modalClose');
+        const quoteForm = document.getElementById('quoteForm');
+        const quoteFormContainer = document.getElementById('quoteFormContainer');
+        const formSuccess = document.getElementById('formSuccess');
+        const formError = document.getElementById('formError');
+        const submitBtn = document.getElementById('submitBtn');
+
+        function openQuoteModal(e) {
+            if (e) e.preventDefault();
+            quoteModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            // Trigger animation on next frame
+            requestAnimationFrame(() => {
+                quoteModal.classList.add('open');
+            });
+        }
+
+        function closeQuoteModal() {
+            quoteModal.classList.remove('open');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                quoteModal.style.display = 'none';
+                // Reset form state
+                quoteFormContainer.style.display = 'block';
+                formSuccess.classList.remove('show');
+                formError.classList.remove('show');
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+                quoteForm.reset();
+            }, 400);
+        }
+
+        // Close on X button
+        modalClose.addEventListener('click', closeQuoteModal);
+
+        // Close on overlay click (not modal itself)
+        quoteModal.addEventListener('click', (e) => {
+            if (e.target === quoteModal) closeQuoteModal();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && quoteModal.classList.contains('open')) {
+                closeQuoteModal();
+            }
+        });
+
+        // Wire up ALL quote/CTA buttons to open the modal
+        document.querySelectorAll('a[href="#contact"], a[href="tel:9255182985"].btn-dark, .nav-cta').forEach(btn => {
+            btn.addEventListener('click', openQuoteModal);
+        });
+
+        // Also handle the CTA banner button specifically
+        document.querySelector('.cta-banner .btn-dark')?.addEventListener('click', openQuoteModal);
+
+        // ---- Form submission ----
+        quoteForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Validate required fields
+            const name = document.getElementById('qName').value.trim();
+            const phone = document.getElementById('qPhone').value.trim();
+
+            if (!name || !phone) {
+                formError.textContent = 'Please fill in your name and phone number.';
+                formError.classList.add('show');
+                return;
+            }
+
+            // Hide error, show loading
+            formError.classList.remove('show');
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+
+            const payload = {
+                name: name,
+                email: document.getElementById('qEmail').value.trim(),
+                phone: phone,
+                address: document.getElementById('qAddress').value.trim(),
+                projectType: document.getElementById('qProject').value,
+                squareFootage: document.getElementById('qSqft').value.trim(),
+                message: document.getElementById('qMessage').value.trim(),
+            };
+
+            try {
+                const response = await fetch(CRM_API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Show success
+                    quoteFormContainer.style.display = 'none';
+                    formSuccess.classList.add('show');
+                } else {
+                    throw new Error(data.error || 'Something went wrong');
+                }
+            } catch (err) {
+                formError.textContent = err.message || 'Something went wrong. Please call us at (925) 518-2985.';
+                formError.classList.add('show');
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+            }
+        });
+
+        // ---- Smooth scroll for non-quote anchor links ----
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                // Skip if it's a quote button (handled above)
+                if (href === '#contact') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
