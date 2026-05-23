@@ -156,6 +156,12 @@
             border: 1px solid var(--gold);
             color: var(--gold) !important;
             transition: all 0.3s ease !important;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
 
         .nav-cta:hover {
@@ -1889,11 +1895,15 @@
             if (btn.dataset.quoteBound === 'true') return;
             btn.dataset.quoteBound = 'true';
             btn.addEventListener('click', openQuoteModal);
-            // iPad / iOS Safari can be flaky with click-only handlers on animated anchors
-            btn.addEventListener('touchend', (e) => {
-                e.preventDefault();
-                openQuoteModal(e);
-            }, { passive: false });
+
+            // Top nav CTA is the main flaky case on iPad/iOS Safari
+            if (btn.classList.contains('nav-cta')) {
+                btn.addEventListener('touchend', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openQuoteModal(e);
+                }, { passive: false });
+            }
         }
 
         quoteButtons.forEach(bindQuoteButton);
