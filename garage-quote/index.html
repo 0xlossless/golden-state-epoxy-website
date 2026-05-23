@@ -3,42 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Premium residential garage epoxy floors for Livermore, Pleasanton, and Dublin homeowners. Local, family-owned, owner-operated installation with a commercial-grade 4-layer system. Call Joseph now for a same-week estimate.">
+  <meta name="description" content="Premium residential garage epoxy floors for Livermore, Pleasanton, and Dublin homeowners. Local, family-owned, owner-operated installation with a commercial-grade 4-layer system. Call now for a same-week estimate.">
   <meta name="robots" content="noindex, nofollow">
-  <title>Garage Epoxy Floors in Livermore, Pleasanton & Dublin | Call Joseph Now</title>
-  <meta name="theme-color" content="#0d1117">
+  <title>Garage Epoxy Floors in Livermore, Pleasanton & Dublin | Call Now</title>
+  <meta name="theme-color" content="#0a0a0a">
   <script src="https://b2b-leadgen-kappa.vercel.app/tracker.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0d1117;
-      --panel: #111827;
-      --panel-2: #161f2b;
-      --text: #f9fafb;
-      --muted: #c8d1dd;
-      --soft: #9aa7b7;
+      --bg: #0a0a0a;
+      --bg-2: #111111;
+      --panel: rgba(255,255,255,.035);
+      --panel-2: rgba(255,255,255,.02);
+      --text: #ffffff;
+      --muted: #d4d4d4;
+      --soft: #9a9a9a;
       --line: rgba(255,255,255,.10);
-      --brand: #f7b733;
-      --brand-2: #fc4a1a;
-      --success: #17c964;
+      --brand: #c9a84c;
+      --brand-2: #dfc06a;
       --shadow: 0 20px 60px rgba(0,0,0,.35);
       --radius: 20px;
       --radius-sm: 14px;
       --max: 1140px;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: var(--font-body);
       background:
-        radial-gradient(circle at top right, rgba(247,183,51,.16), transparent 25%),
-        linear-gradient(180deg, #0d1117 0%, #0f1722 40%, #0d1117 100%);
+        radial-gradient(circle at top right, rgba(201,168,76,.14), transparent 25%),
+        linear-gradient(180deg, #0a0a0a 0%, #111111 40%, #0a0a0a 100%);
       color: var(--text);
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       padding-bottom: 96px;
+      overflow-x: hidden;
+    }
+
+    .grain-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: .035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    main, .top-call, .sticky-call { position: relative; z-index: 2; }
+
+    .shimmer-line {
+      width: 120px;
+      height: 1px;
+      margin: 18px 0 20px;
+      background: linear-gradient(90deg, transparent 0%, var(--brand) 35%, var(--brand-2) 50%, var(--brand) 65%, transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmer 4s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
     }
 
     a { color: inherit; text-decoration: none; }
@@ -51,6 +84,17 @@
 
     .hero {
       padding: 18px 0 34px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(10,10,10,.45), rgba(10,10,10,.75)),
+        radial-gradient(circle at top center, rgba(201,168,76,.10), transparent 45%);
+      pointer-events: none;
     }
 
     .top-call {
@@ -58,7 +102,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(12px);
-      background: rgba(13,17,23,.84);
+      background: rgba(10,10,10,.9);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
@@ -121,10 +165,11 @@
     .owner-card,
     .cta-panel,
     .area-card {
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
     }
 
     .hero-copy {
@@ -132,16 +177,17 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.2rem, 7vw, 4.5rem);
-      line-height: .98;
-      letter-spacing: -.04em;
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      line-height: .96;
+      letter-spacing: -.03em;
       margin: 0 0 16px;
       max-width: 12ch;
     }
 
     .hero .lead {
       color: var(--muted);
-      font-size: clamp(1rem, 2.8vw, 1.22rem);
+      font-size: clamp(1rem, 2.8vw, 1.16rem);
       margin: 0 0 18px;
       max-width: 62ch;
     }
@@ -454,7 +500,7 @@
   <div class="top-call">
     <div class="top-call-inner">
       <div class="brand-chip"><span class="brand-chip-dot"></span> Golden State Epoxy Flooring</div>
-      <a class="call-btn" href="tel:9255182985" aria-label="Call Joseph now at 925-518-2985">Call Joseph Now · (925) 518-2985</a>
+      <a class="call-btn" href="tel:9255182985" aria-label="Call Joseph now at 925-518-2985">Call Now · (925) 518-2985</a>
     </div>
   </div>
 
@@ -463,8 +509,9 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <div class="section-tag">Residential Garage Epoxy Floors · Livermore, Pleasanton & Dublin</div>
-          <h1>Upgrade Your Garage Floor Without Hiring a Franchise You’ll Never Meet.</h1>
-          <p class="lead">Get a <span class="highlight">beautiful, durable, commercial-grade garage floor</span> installed by a local, family-owned owner-operator who answers the phone personally, explains every step clearly, and treats your home like it matters.</p>
+          <h1>Where Garage Floors Become Works of Art.</h1>
+          <div class="shimmer-line"></div>
+          <p class="lead">Premium residential garage epoxy floors for homeowners who want a <span class="highlight">beautiful, durable, commercial-grade finish</span> installed by a local, family-owned owner-operator — not a franchise crew you’ll never meet.</p>
 
           <div class="proof-row">
             <div class="proof-pill">Local & Family-Owned</div>
@@ -474,7 +521,7 @@
           </div>
 
           <div class="call-stack">
-            <a class="call-btn" href="tel:9255182985">Call Joseph Now · (925) 518-2985</a>
+            <a class="call-btn" href="tel:9255182985">Call Now · (925) 518-2985</a>
             <p class="call-note">We answer every call personally. Same-week estimates available.</p>
             <div class="phone-text">No forms. No waiting around. No call center. Just a direct line to Joseph.</div>
           </div>
@@ -542,7 +589,7 @@
           <h2>Ready to Talk to the Owner Instead of a Sales Team?</h2>
           <p>If you want a premium garage floor installed by a local family-owned company that treats the job seriously, call now and speak directly with Joseph.</p>
           <div class="call-stack" style="align-items:center; margin-top:18px;">
-            <a class="call-btn" href="tel:9255182985">Call Joseph Now · (925) 518-2985</a>
+            <a class="call-btn" href="tel:9255182985">Call Now · (925) 518-2985</a>
             <p class="call-note">We answer every call personally.</p>
           </div>
           <div class="tiny-proof">Serving Livermore, Pleasanton & Dublin homeowners who want quality over shortcuts.</div>
@@ -588,7 +635,7 @@
         </ul>
         <div class="mini-divider"></div>
         <div class="call-stack">
-          <a class="call-btn" href="tel:9255182985">Call Joseph Now · (925) 518-2985</a>
+          <a class="call-btn" href="tel:9255182985">Call Now · (925) 518-2985</a>
           <p class="call-note">We answer every call personally. If you’re ready for a same-week estimate, call now.</p>
         </div>
       </div>
@@ -626,10 +673,10 @@
     <section class="section">
       <div class="wrap">
         <div class="cta-panel">
-          <h2>One Simple Next Step: Call Joseph Now</h2>
+          <h2>One Simple Next Step: Call Now</h2>
           <p>If you found this page through Google, you’re already looking for a garage floor installer. Don’t overcomplicate it. Call now, talk directly to Joseph, and find out if your garage is a fit.</p>
           <div class="call-stack" style="align-items:center; margin-top:18px;">
-            <a class="call-btn" href="tel:9255182985">Call Joseph Now · (925) 518-2985</a>
+            <a class="call-btn" href="tel:9255182985">Call Now · (925) 518-2985</a>
             <p class="call-note">We answer every call personally. Same-week estimates available.</p>
             <div class="phone-text" style="text-align:center;">Golden State Epoxy Flooring · Local & Family-Owned · Serving Livermore, Pleasanton & Dublin</div>
           </div>
@@ -640,7 +687,7 @@
 
   <div class="sticky-call">
     <div class="inner">
-      <a class="call-btn" href="tel:9255182985" aria-label="Call Joseph now at 925-518-2985">Call Joseph Now · (925) 518-2985</a>
+      <a class="call-btn" href="tel:9255182985" aria-label="Call Joseph now at 925-518-2985">Call Now · (925) 518-2985</a>
       <p class="sticky-sub">We answer every call personally.</p>
     </div>
   </div>
