@@ -1883,12 +1883,27 @@
         });
 
         // Wire up ALL quote/CTA buttons to open the modal
-        document.querySelectorAll('a[href="#contact"], a[href="tel:9255182985"].btn-dark, .nav-cta').forEach(btn => {
+        const quoteButtons = document.querySelectorAll('a[href="#contact"], a[href="tel:9255182985"].btn-dark, .nav-cta');
+
+        function bindQuoteButton(btn) {
+            if (btn.dataset.quoteBound === 'true') return;
+            btn.dataset.quoteBound = 'true';
             btn.addEventListener('click', openQuoteModal);
-        });
+            // iPad / iOS Safari can be flaky with click-only handlers on animated anchors
+            btn.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                openQuoteModal(e);
+            }, { passive: false });
+        }
+
+        quoteButtons.forEach(bindQuoteButton);
 
         // Also handle the CTA banner button specifically
-        document.querySelector('.cta-banner .btn-dark')?.addEventListener('click', openQuoteModal);
+        const ctaBannerButton = document.querySelector('.cta-banner .btn-dark');
+        if (ctaBannerButton && !ctaBannerButton.dataset.quoteBound) {
+            ctaBannerButton.dataset.quoteBound = 'true';
+            bindQuoteButton(ctaBannerButton);
+        }
 
         // ---- Form submission ----
         quoteForm.addEventListener('submit', async (e) => {
